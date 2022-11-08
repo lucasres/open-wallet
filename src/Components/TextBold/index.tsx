@@ -1,14 +1,15 @@
 import { FC } from "react";
-import { Text } from "react-native";
+import { Text, TextStyle } from "react-native";
 import styles from "./styles";
 
 interface TextBoldProps {
     text: string
+    style?: TextStyle
 } 
 
-const TextBold: FC<TextBoldProps> = ({ text }) => {
+const TextBold: FC<TextBoldProps> = ({ text, style }) => {
     return (
-        <Text style={styles.text}>
+        <Text style={{...styles.text, ...style}}>
             {text}
         </Text>
     )
