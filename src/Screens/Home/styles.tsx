@@ -23,5 +23,9 @@ export default StyleSheet.create({
     divider: {
         marginBottom: 22,
         marginTop: 22,
+    },
+    iconTransactio: {
+        fontSize: 18,
+        fontWeight: 'bold',
     }
 })
