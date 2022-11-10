@@ -12,6 +12,8 @@ export default StyleSheet.create({
         paddingRight: 22,
     },
     see: {
-        fontSize: 20
+        fontSize: 20,
+        paddingTop: 4,
+        paddingBottom: 4,
     }
 }) 
