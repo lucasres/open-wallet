@@ -1,15 +1,26 @@
 import { FC, ReactNode } from "react";
+import CreateTrasaction from "../Screens/CreateTransaction";
 import Home from "../Screens/Home";
 
 interface RouteProps {
     name: string
-    component: FC
+    component: any
 }
+
+export enum RouteNamesEnum {
+    HOME = "home",
+    CREATE_TRANSACTION = "create_trx",
+}
+
 
 const routes: RouteProps[] = [
     {
-        name: 'home',
+        name: RouteNamesEnum.HOME,
         component: Home
+    },
+    {
+        name: RouteNamesEnum.CREATE_TRANSACTION,
+        component: CreateTrasaction
     }
 ]
 

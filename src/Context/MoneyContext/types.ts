@@ -1,7 +1,9 @@
 import { ReactNode } from "react";
+import { TransactionTypeEnum } from "../../Models/Transaction";
 
 export interface MoneyContextProps {
-    day: string,
+    currentTransaction?: TransactionTypeEnum,
+    setCurrentTransaction: (type: TransactionTypeEnum) => void
 }
 
 export interface MoneyContextProviderProps {

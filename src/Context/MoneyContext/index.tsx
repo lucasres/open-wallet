@@ -1,19 +1,26 @@
 import { format } from "date-fns";
-import { createContext, FC } from "react";
+import { createContext, FC, useState } from "react";
 import { MoneyContextProps, MoneyContextProviderProps } from "./types";
+import { TransactionTypeEnum } from "../../Models/Transaction";
 
 
 const MoneyContext = createContext<MoneyContextProps>({
-    day: ''
+    currentTransaction: undefined,
+    setCurrentTransaction: (type: TransactionTypeEnum) => {}
 })
 
 export const MoneyContextProvider: FC<MoneyContextProviderProps> = ({ children }) => {
-    console.log(format(new Date(), 'uuuu_LL_dd'));
+    const [currentTransaction, setCurrentTransaction] = useState<TransactionTypeEnum>()
+
+    const handleSetCurrentTransaction = (type: TransactionTypeEnum) => {
+        setCurrentTransaction(type)
+    }
     
     return (
         <MoneyContext.Provider
             value={{
-                day: format(new Date(), 'uuuu_LL_ee')
+                currentTransaction,
+                setCurrentTransaction: handleSetCurrentTransaction
             }}
         >
             {children}

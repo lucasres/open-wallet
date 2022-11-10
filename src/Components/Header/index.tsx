@@ -6,17 +6,24 @@ import Feater from '@expo/vector-icons/Feather';
 import { useContext } from "react";
 import PrivacyContext from "../../Context/PrivacyContext";
 
+interface HeaderProps {
+    title: string
+    showSee?: boolean
+}
 
-const Header: FC = () => {
+const Header: FC<HeaderProps> = ({
+    title,
+    showSee
+}) => {
     const { see, toggleSee } = useContext(PrivacyContext)
 
     return (
         <View style={styles.container}>
-            <TextBold text="Ola, Lucas" />
-            <TouchableHighlight onPress={() => toggleSee()}>
+            <TextBold text={title} />
+            {showSee && <TouchableHighlight onPress={() => toggleSee()}>
                 <Feater name={see ? "eye" : "eye-off"} 
                     style={styles.see} />
-            </TouchableHighlight>
+            </TouchableHighlight>}
         </View>
     )
 }
