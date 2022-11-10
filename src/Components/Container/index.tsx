@@ -3,7 +3,7 @@ import { View } from "react-native";
 import styles from "./styles";
 
 interface ContainerProps {
-    children: JSX.Element
+    children: React.ReactNode
 }
 
 const Container: FC<ContainerProps> = ({ children }) => {
