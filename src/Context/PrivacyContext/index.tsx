@@ -1,13 +1,5 @@
 import { createContext, FC, ReactNode, useState } from "react";
-
-interface PrivacyContextProps {
-    see: boolean,
-    toggleSee: () => void
-}
-
-interface PrivacyContextProviderProps {
-    children?: JSX.Element
-}
+import { PrivacyContextProps, PrivacyContextProviderProps } from "./types";
 
 const PrivacyContext = createContext<PrivacyContextProps>({
     see: true,
